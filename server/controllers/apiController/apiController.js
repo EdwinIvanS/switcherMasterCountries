@@ -14,14 +14,13 @@ const apiMainController = {
                     image :  resultado[i].flags.png})
             }
 
-            let respuesta ={
+            res.status(200).json({
                 autor : {
                     name: "Edwin Ivan",
                     lastname: "Saboya Echeverry"
                 },
                 items : detallePaises
-            }
-            res.json(respuesta); 
+            })
         })
         .catch(error => console.log(error)
         );
@@ -47,14 +46,38 @@ const apiMainController = {
                 })
             }
 
-            let respuesta ={
+            res.status(200).json({
                 autor : {
                     name: "Edwin Ivan",
                     lastname: "Saboya Echeverry"
                 },
                 items : detallePais
+            })            
+        })
+        .catch(error => console.log(error));
+    }),
+
+    filtroRegion: ((req, res) =>{
+        let region = req.params.region;
+        fetch(`https://restcountries.com/v3.1/region/${region}`)
+        .then(consumo=>consumo.json())
+        .then( resultado =>{
+            let detalleRegion = [];
+            for (let i = 0; i < 16; i++) {
+                detalleRegion.push({
+                    name : resultado[i].name.common, 
+                    population : resultado[i].population, 
+                    region : resultado[i].region, 
+                    capital : resultado[i].capital[0], 
+                    image :  resultado[i].flags.png})
             }
-            res.json(respuesta);             
+            res.status(200).json({
+                autor : {
+                    name: "Edwin Ivan",
+                    lastname: "Saboya Echeverry"
+                },
+                items : detalleRegion
+            })
         })
         .catch(error => console.log(error));
     })
