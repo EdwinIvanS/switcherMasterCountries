@@ -3,7 +3,8 @@ import Header from "./header";
 import Search from "./search";
 import ContenedorPaises from "./contenedorPaises";
 
-function ContenedorHeader() {
+function ContenedorHeader(props) {
+    const { category } = props;
 
     const[pais, setPais] = useState([]);
 
