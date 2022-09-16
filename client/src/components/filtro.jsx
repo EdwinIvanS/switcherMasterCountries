@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Select from 'react-select'
 //import FiltroSeleccion from "./filtroseleccion";
-import ContenedorHeader from "./contenedorHeader";
 
 function Filtro() {    
 
-    const[category, setcategory] = useState([]);
+    //const[category, setcategory] = useState([]);
 
     const options = [
         { value: 'Africa', label: 'Africa' },
@@ -16,7 +15,8 @@ function Filtro() {
     ]
 
     const handleSelectChange = (event) => {
-        setcategory(event.value);
+        //setcategory(event.value);
+        console.log(event.value)
     }
 
 
@@ -29,14 +29,14 @@ function Filtro() {
                     onChange={handleSelectChange}
             />
         </form> 
-        {
+        {/*
             
             Object.values(category).map((e,i) => {
                 return(
-                    <ContenedorHeader key={i} category={category} />
+                    <FiltroSeleccion key={i} category={category} />
                 );
             })
-        }    
+        */}    
         
         
         </React.Fragment>

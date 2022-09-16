@@ -63,14 +63,17 @@ const apiMainController = {
         .then(consumo=>consumo.json())
         .then( resultado =>{
             let detalleRegion = [];
-            for (let i = 0; i < 16; i++) {
-                detalleRegion.push({
-                    name : resultado[i].name.common, 
-                    population : resultado[i].population, 
-                    region : resultado[i].region, 
-                    capital : resultado[i].capital[0], 
-                    image :  resultado[i].flags.png})
-            }
+            
+            resultado= resultado.map((result, i) => {
+                if(i<16){
+                    detalleRegion.push({
+                        name : result.name.common, 
+                        population : result.population, 
+                        region : result.region, 
+                        capital : result.capital, 
+                        image :  result.flags.png})
+                }
+            })
             res.status(200).json({
                 autor : {
                     name: "Edwin Ivan",
