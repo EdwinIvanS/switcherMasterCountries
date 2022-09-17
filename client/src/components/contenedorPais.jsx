@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import Header from "./header";
 import Back from "./back";
+import { UseFetchdetallePais } from "./hooks/UseFetchdetallePais";
 
 function ContenedorPais(){
-    const { id } = useParams();    
 
-    const[pais, setPais]= useState([]);
-
-    useEffect(()=>{
-        fetch(`http://localhost:3000/api/pais/${id}`)
-        .then(result=> result.json())
-        .then( datos =>{
-            let containerCategory = [];
-            datos.items?.forEach(element => {
-                containerCategory.push(element);            
-            }); 
-            setPais(containerCategory);
-        })
-    })
+    const  { pais , isFetching } = UseFetchdetallePais();        
+    if(isFetching) return console.log("")
 
     return(
         <React.Fragment>

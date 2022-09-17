@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from 'react-select'
 //import FiltroSeleccion from "./filtroseleccion";
 
@@ -29,8 +29,7 @@ function Filtro() {
                     onChange={handleSelectChange}
             />
         </form> 
-        {/*
-            
+        {/*            
             Object.values(category).map((e,i) => {
                 return(
                     <FiltroSeleccion key={i} category={category} />
