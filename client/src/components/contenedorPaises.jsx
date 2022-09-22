@@ -2,11 +2,11 @@ import React from "react";
 import {Link} from "react-router-dom"
 
 function ContenedorPaises(props){
-    const{name, population, region, capital, image} = props;
+    const{name, population, region, capital, image, theme} = props;
     return(
         <React.Fragment>
             <div className="body-general">
-                <div className="card">
+                <div className="card" id={theme === 'dark' ? 'dark' : 'light'}>
                     <div className="card-img">
                     <Link to={"/search/"+name}>
                         <img src={image} alt=""/>

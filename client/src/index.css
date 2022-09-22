@@ -1,7 +1,7 @@
 :root {
   /*Colors*/
   --Dark-Blue: #2b3945;
-  --Very-Dark-Blue: hsl(207, 26%, 17%);
+  --Very-Dark-Blue: #202c37;
   --Very-Dark-Blue-osc: hsl(200, 15%, 8%);
   --Dark-Gray: hsl(0, 0%, 52%);
   --Very-Light-Gray: #fafafa;
@@ -14,14 +14,25 @@ body{
   margin: 0px;
 }
 
-.header-title{
+#dark body {
+  background-color: var(--Very-Dark-Blue);
+}
+
+#light{
+  background-color: blue;
+}
+
+#dark.header-title {
   background-color: var(--Dark-Blue);
+}
+
+.header-title{
   display: flex;
   justify-content: space-around
 }
 
 .header-title p{
-  color: white;
+  color: #ffffff;
 }
 
 .header-title-container1{
@@ -49,6 +60,10 @@ body{
 
 /*=======================================*/
 
+#dark .contenedor-header  {
+  background-color: var(--Very-Dark-Blue);
+}
+
 .contenedor-header{
   display: flex;
   flex-wrap: wrap;
@@ -64,8 +79,11 @@ body{
   color: burlywood;
 }
 
-.fomulario input {
+#dark .fomulario input { 
   background-color: var(--Dark-Blue);
+}
+
+.fomulario input {
   border: var(--Dark-Blue);
   border-radius: 3px;
   color: white;
@@ -78,8 +96,11 @@ body{
   text-align: -webkit-right;
 }
 
-.list .css-1s2u09g-control {
+#dark .css-1s2u09g-control {
   background-color: var(--Dark-Blue);
+}
+
+.list .css-1s2u09g-control {
   border: var(--Dark-Blue);
   border-radius: 3px;
   color: white;
@@ -141,8 +162,11 @@ body{
   margin: 2%;
 }
 
-.card{
+#dark .card {
   background-color: var(--Dark-Blue);
+}
+
+.card{  
   width: 220px;
   height: 240px;
 }
@@ -186,7 +210,7 @@ body{
 .container-back button{
   background-color: var(--Dark-Blue);
   border: var(--Dark-Blue);
-  color: white;
+  color: #ffffff;
   box-shadow: 2px 2px 2px 1px var(--Very-Dark-Blue-osc);
   cursor: pointer;
   height: 30px;

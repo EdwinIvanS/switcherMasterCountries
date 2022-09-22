@@ -2,8 +2,8 @@ import React from "react";
 import Select from 'react-select'
 //import FiltroSeleccion from "./filtroseleccion";
 
-function Filtro() {    
-
+function Filtro(props) {    
+    const {theme} = props;
     //const[category, setcategory] = useState([]);
 
     const options = [
@@ -22,7 +22,7 @@ function Filtro() {
 
     return(
         <React.Fragment>
-        <form className="list">
+        <form className="list" id={theme === 'dark' ? 'dark' : 'light'}>
             <Select options={options} 
                     defaultValue={{ label : "  Filter by Region", value:''}}
                     className="input-filter"

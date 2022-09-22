@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./header";
 import Back from "./back";
 import { UseFetchdetallePais } from "./hooks/UseFetchdetallePais";
+import { ContextTheme } from "./ContextTheme";
 
 function ContenedorPais(){
 
-    const  { pais , isFetching } = UseFetchdetallePais();        
-    if(isFetching) return console.log("")
+    const  { pais  } = UseFetchdetallePais();  
+    const headerContext = useContext(ContextTheme);
 
     return(
         <React.Fragment>
-            <Header/>
+            <Header theme={headerContext}/>
             <Back/>
             {
                 pais.capital !== "" && pais.map((key , i) =>{
