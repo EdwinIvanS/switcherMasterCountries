@@ -10,7 +10,6 @@ function Back({theme}) {
                 </Link>
             </div>
         </React.Fragment>
-
     )
 }
 

@@ -1,21 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
-import { ContextTheme } from "./ContextTheme";
-//import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 function Header( { onClick , theme} ){
-    const balanceContext = useContext(ContextTheme);
     console.log("valor del tema" + theme)
 
-    /*const changeColor = () => { 
-        const resultado = balanceContext.theme === 'dark' ? 'light' : 'dark';
-        console.log(resultado + " evento")
-        setColorTheme(resultado);
-        balanceContext.toglleTheme(resultado)
-    }
-*/
-    
     return(
         <React.Fragment>
             <div className="header-title"  id={ theme ? 'dark' : 'light'}>

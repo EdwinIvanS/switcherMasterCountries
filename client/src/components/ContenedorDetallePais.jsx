@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import Back from "./back";
 import { UseFetchdetallePais } from "./hooks/UseFetchdetallePais";
-import { ContextTheme } from "./ContextTheme";
 
 function ContenedorDetallePais( { theme } ){
 
     const  { pais  } = UseFetchdetallePais();  
-    const headerContext = useContext(ContextTheme);
 
     return(
         <React.Fragment>
