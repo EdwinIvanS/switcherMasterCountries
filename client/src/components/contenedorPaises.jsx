@@ -6,7 +6,7 @@ function ContenedorPaises(props){
     return(
         <React.Fragment>
             <div className="body-general">
-                <div className="card" id={theme === 'dark' ? 'dark' : 'light'}>
+                <div className="card" id={ theme ? 'dark' : 'light'}>
                     <div className="card-img">
                     <Link to={"/search/"+name}>
                         <img src={image} alt=""/>

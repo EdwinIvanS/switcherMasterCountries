@@ -1,17 +1,31 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
-import ContenedorHeader from './components/contenedorHeader';
-import ContenedorPais from './components/contenedorPais';
+import Search from './components/search';
+import ContenedorDetallePais from './components/ContenedorDetallePais';
+import Header from './components/Header';
+//import { ContextTheme, color } from "./ContextTheme";
 
 function App() {
+  const [ darkMode , setdarkMode ] = useState(true);
+
+  if(darkMode) document.querySelector("body").style.backgroundColor = "#202c37";
+  else document.querySelector("body").style.backgroundColor = "#fafafaf5";
+
+  const switchMode = () => { 
+    setdarkMode((prevState)=> !prevState)
+  }
+
   return (
     <div className="App">
-       <BrowserRouter>                    
+    {/*<ContextTheme.Provider value={{ theme , toglleTheme}}> */}
+    <Header onClick={switchMode} theme={darkMode}/>
+    <BrowserRouter>                    
           <Routes>
-            <Route path="/" exact={true} element={<ContenedorHeader/>} ></Route>
-            <Route path="/search/:id" exact={true} element={<ContenedorPais/>} ></Route>
+            <Route path="/" exact={true} element={<Search theme={darkMode}/>} ></Route>
+            <Route path="/search/:id" exact={true} element={<ContenedorDetallePais theme={darkMode}/>} ></Route>
           </Routes>
-      </BrowserRouter>  
+    </BrowserRouter> 
+    {/*</ContextTheme.Provider>*/}
     </div>
   );
 }

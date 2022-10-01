@@ -1,28 +1,26 @@
 import React, { useContext } from "react";
-import Header from "./header";
 import Back from "./back";
 import { UseFetchdetallePais } from "./hooks/UseFetchdetallePais";
 import { ContextTheme } from "./ContextTheme";
 
-function ContenedorPais(){
+function ContenedorDetallePais( { theme } ){
 
     const  { pais  } = UseFetchdetallePais();  
     const headerContext = useContext(ContextTheme);
 
     return(
         <React.Fragment>
-            <Header theme={headerContext}/>
-            <Back/>
+            <Back theme={theme}/>
             {
                 pais.capital !== "" && pais.map((key , i) =>{
                     return(
-                        <div key={i} className="contenedor-detalle-pais">
+                        <div key={i} className="contenedor-detalle-pais"  id={ theme ? 'dark' : 'light'}>
                             <div className="detalle-pais-img">
                                 <img src={key.image} alt=""/>
                             </div>
                             <div className="detalle-pais-descripcion">
-                                <h3 className="detalle-pais-title"> {key.name} </h3>
-                                <div className="detalle-pais-info">
+                                <h3 className="detalle-pais-title" id={ theme ? 'dark' : 'light'}> {key.name} </h3>
+                                <div className="detalle-pais-info" id={ theme ? 'dark' : 'light'}>
                                     <div className="section1">
                                         <p>Native Name: {key.name} </p>
                                         <p>Population: {key.population}</p>
@@ -37,7 +35,7 @@ function ContenedorPais(){
                                     </div>                                   
                                     
                                 </div>
-                                <div className="detalle-pais-border">
+                                <div className="detalle-pais-border" id={ theme ? 'dark' : 'light'}>
                                     <p>Border Countries <span>{key.languages + ""}</span> </p>                                  
                                 </div>
                             </div>
@@ -49,4 +47,4 @@ function ContenedorPais(){
         </React.Fragment>
     )
 }
-export default ContenedorPais;
+export default ContenedorDetallePais;

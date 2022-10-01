@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Back() {
+function Back({theme}) {
     return(
         <React.Fragment>
-            <div className="container-back">
+            <div className="container-back" id={theme ? 'dark' : 'light'}>
                 <Link to="/">
-                    <button className="back"> ← Back</button>
+                    <button className="back" id={theme ? 'dark' : 'light'}> ← Back</button>
                 </Link>
             </div>
         </React.Fragment>

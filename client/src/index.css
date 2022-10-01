@@ -4,7 +4,7 @@
   --Very-Dark-Blue: #202c37;
   --Very-Dark-Blue-osc: hsl(200, 15%, 8%);
   --Dark-Gray: hsl(0, 0%, 52%);
-  --Very-Light-Gray: #fafafa;
+  --Very-Light-Gray: #fafafaf5;
   --White: hsl(0, 0%, 100%)
 }
 
@@ -14,12 +14,8 @@ body{
   margin: 0px;
 }
 
-#dark body {
-  background-color: var(--Very-Dark-Blue);
-}
-
-#light{
-  background-color: blue;
+#light.header-title {
+  background-color: white;
 }
 
 #dark.header-title {
@@ -41,9 +37,23 @@ body{
 }
 
 .header-title-container1 p{
-  color: var(--White);
   font-weight: bold;
+}
 
+#light .header-title-container1 p {
+  color: black;
+}
+
+#dark .header-title-container1 p {
+  color: var(--White);
+}
+
+#light .header-title-container2 p {
+  color: black;
+}
+
+#dark .header-title-container2 p {
+  color: var(--White);
 }
 
 .header-title-container2{
@@ -59,6 +69,7 @@ body{
 }
 
 /*=======================================*/
+
 
 #dark .contenedor-header  {
   background-color: var(--Very-Dark-Blue);
@@ -83,6 +94,16 @@ body{
   background-color: var(--Dark-Blue);
 }
 
+#light .fomulario input {
+  background-color: var(--Very-Light-Gray);
+  box-shadow: 0.1px 1px 2px 2px rgb(241, 238, 238);
+}
+
+#light{
+  background-color: var(--Very-Light-Gray);
+}
+
+
 .fomulario input {
   border: var(--Dark-Blue);
   border-radius: 3px;
@@ -92,12 +113,25 @@ body{
   width: 65%;
 }
 
+#dark input{
+ color: white;
+}
+
+#light input {
+  color: var(--Dark-Gray);
+}
+
 .css-b62m3t-container{
   text-align: -webkit-right;
 }
 
 #dark .css-1s2u09g-control {
   background-color: var(--Dark-Blue);
+}
+
+#light .css-1s2u09g-control {
+  background-color: var(--Very-Light-Gray);
+  box-shadow: 0.1px 1px 2px 2px rgb(241, 238, 238);
 }
 
 .list .css-1s2u09g-control {
@@ -121,7 +155,7 @@ body{
 
 
 
-.list .css-26l3qy-menu{
+#dark .list .css-26l3qy-menu{
   background-color: var(--Dark-Blue);
   border: var(--Dark-Blue);
   color: var(--White);
@@ -130,6 +164,14 @@ body{
   width: 70%;
 }
 
+#light .list .css-26l3qy-menu {
+  background-color: var(--Dark-Blue);
+  border: var(--Dark-Blue);
+  color: var(--White);
+  text-align: initial;
+  margin: 0px 0px 0px 30%;
+  width: 70%;
+}
 
 .list .css-1pahdxg-control{
   background-color: var(--Dark-Blue);
@@ -140,6 +182,11 @@ body{
 
 .list .css-1pahdxg-control:hover {
   border-color: white;
+}
+
+#light .bto_search {
+  background-color: var(--White);
+  box-shadow: 0.1px 1px 2px 2px rgb(241, 238, 238);
 }
 
 .bto_search{
@@ -164,6 +211,12 @@ body{
 
 #dark .card {
   background-color: var(--Dark-Blue);
+  color: white;
+}
+
+#light .card {
+  background-color: white;
+  box-shadow: 0.1px 1px 2px 2px rgb(241, 238, 238);
 }
 
 .card{  
@@ -193,6 +246,14 @@ body{
   margin: 0px;
 }
 
+#light .card-description p {
+  color: black;
+}
+
+#dark .card-description p {
+  color: white;
+}
+
 .card-description .title{
   font-size: 11px;
   font-weight: bold;
@@ -207,11 +268,21 @@ body{
   padding-left: 10%;
 }
 
-.container-back button{
+#dark.container-back button {
   background-color: var(--Dark-Blue);
   border: var(--Dark-Blue);
   color: #ffffff;
   box-shadow: 2px 2px 2px 1px var(--Very-Dark-Blue-osc);
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+}
+
+#light.container-back button {
+  background-color: white;
+  border: var(--Dark-Blue);
+  color: black;
+  box-shadow: 0.1px 1px 2px 2px rgb(241 238 238);
   cursor: pointer;
   height: 30px;
   width: 100px;
@@ -237,14 +308,27 @@ body{
   justify-content: center;
 }
 
-.detalle-pais-info{
+
+
+#light .detalle-pais-info {
   display: flex;
-  color: var(--Very-Light-Gray);
+  background-color: var(--Very-Light-Gray);
+  color: black;
   font-size: 12px;
 }
 
-.detalle-pais-title{
-  color: var(--Very-Light-Gray);
+#dark .detalle-pais-info {
+  display: flex;
+  color: white;
+  font-size: 12px;
+}
+
+#dark .detalle-pais-title{
+  color: white;
+}
+
+#light .detalle-pais-title {
+  color: black;
 }
 
 .section1{
@@ -255,15 +339,29 @@ body{
   padding-left: 15px;
 }
 
-.detalle-pais-border{
-  color: var(--Very-Light-Gray);
+#dark .detalle-pais-border{
+  color: white;
   font-size: 13px;
 }
 
-.detalle-pais-border span{
+#light .detalle-pais-border {
+  color: black;
+  font-size: 13px;
+}
+
+#dark .detalle-pais-border span{
   border: 1px solid var(--Dark-Blue);
   background-color: var(--Dark-Blue);
   box-shadow: 2px 2px 2px 1px var(--Very-Dark-Blue-osc);
+  font-size: 12px;
+  margin-left: 20px;
+  padding: 8px;
+}
+
+#light .detalle-pais-border span {
+  border: 1px solid var(--Very-Light-Gray);
+  background-color: white;
+  box-shadow: 0.1px 1px 2px 2px rgb(241 238 238);
   font-size: 12px;
   margin-left: 20px;
   padding: 8px;
