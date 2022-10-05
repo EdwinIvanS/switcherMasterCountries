@@ -18,8 +18,8 @@ function Search({theme}){
         catch (error) { console.log(error)}
     },[])
 
-    const ServiceFetchAllPaises = () => {
-        fetch(`http://localhost:3000/api/paises`)
+    const ServiceFetchAllPaises = async () => {
+        await fetch(`http://localhost:3000/api/paises`)
         .then(consulta =>  consulta.json())
         .then(resultado => {
             let array =[];
@@ -32,7 +32,7 @@ function Search({theme}){
         const SelectRegion = e.value;        
         if(SelectRegion !== ""){ 
             const fetchSelectOption = async () => {
-                fetch(`http://localhost:3000/api/region/${SelectRegion}`)
+                await fetch(`http://localhost:3000/api/region/${SelectRegion}`)
                 .then(consulta =>  consulta.json())
                 .then( resultado => {
                     let array =[];

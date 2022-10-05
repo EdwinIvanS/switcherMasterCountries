@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 function Header( { onClick , theme} ){
-    console.log("valor del tema" + theme)
 
     return(
         <React.Fragment>

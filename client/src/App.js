@@ -8,7 +8,7 @@ function App() {
   const [ darkMode , setdarkMode ] = useState(true);
 
   if(darkMode) document.querySelector("body").style.backgroundColor = "#202c37";
-  else document.querySelector("body").style.backgroundColor = "#fafafaf5";
+  else         document.querySelector("body").style.backgroundColor = "#fafafaf5";
 
   const switchMode = () => { 
     setdarkMode((prevState)=> !prevState)
